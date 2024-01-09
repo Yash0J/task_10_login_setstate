@@ -7,23 +7,20 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        brightness: Brightness.dark, // Set to dark theme
-        // primaryColor: Appcolor.primarycolor, // Set primary color
-        primaryColor: Appcolor.primarycolor, // Set primary color
-        colorScheme: ColorScheme.fromSwatch(
-          backgroundColor: Appcolor.primarycolor,
-          accentColor: Appcolor.purple,
+        brightness: Brightness.dark,
+        primaryColor: AppColors.primaryColor,
+        colorScheme: ColorScheme.dark(
+          primary: AppColors.primaryColor,
+          background: AppColors.darkBlue,
+          secondary: AppColors.purple,
         ),
-
-        // accentColor: Appcolor.secondrycolor, // Set accent color
         useMaterial3: true,
       ),
       home: const Login(),
