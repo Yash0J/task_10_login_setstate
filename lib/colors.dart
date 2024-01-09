@@ -9,4 +9,5 @@ class AppColors {
   static Color green = const Color(0xff35b5ad);
   static Color grey = const Color(0xff645c64);
   static Color white = const Color(0xffe6e1e4);
+  static Color disabledpurple = const Color(0xFF5A5083);
 }

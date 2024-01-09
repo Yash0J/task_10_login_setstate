@@ -60,28 +60,18 @@ class _LoginState extends State<Login> {
               //
               emailTextField(),
               //
-              // const SizedBox(height: 16),
-              //
               passwordTextField(),
               //
               const SizedBox(height: 6),
               //
-              Center(
-                child: loginButton(mediaWidth),
-              ),
+              Center(child: loginButton(mediaWidth)),
               //
-              // const SizedBox(height: 8),
-              //
-              Center(
-                child: forgotPasswordButton(mediaWidth),
-              ),
+              Center(child: forgotPasswordButton(mediaWidth)),
               //
               SizedBox(height: mediaHeight * 0.1),
 
               //
-              Center(
-                child: newAccountSignup(),
-              ),
+              Center(child: newAccountSignup()),
             ],
           ),
         ),
@@ -102,27 +92,14 @@ class _LoginState extends State<Login> {
   SizedBox emailTextField() {
     return SizedBox(
       height: 80,
-      child: TextFormField(
+      child: Coustom.textField(
         cursorColor: AppColors.white,
-        decoration: InputDecoration(
-          filled: true,
-          fillColor:
-              AppColors.purple.withOpacity(0.6), // Set the background color
-          // Adjust content padding
-
-          border: OutlineInputBorder(
-            borderSide: BorderSide.none,
-            borderRadius: BorderRadius.circular(20.0), // Set the border radius
-          ),
-          prefixIcon: const Icon(Icons.email_outlined), // Set the prefix icon
-          hintText: 'Enter your email', // Placeholder text
-          label: Coustom.text(
-            text: "EMAIL",
-            fontSize: 14,
-            fontWeight: FontWeight.w400,
-          ),
-          floatingLabelAlignment: FloatingLabelAlignment.start,
-          alignLabelWithHint: true,
+        prefixIcon: const Icon(Icons.email_outlined), // Set the prefix icon
+        hintText: 'Enter your email', // Placeholder text
+        label: Coustom.text(
+          text: "EMAIL",
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
         ),
       ),
     );
@@ -131,32 +108,18 @@ class _LoginState extends State<Login> {
   SizedBox passwordTextField() {
     return SizedBox(
       height: 80,
-      child: TextFormField(
+      child: Coustom.textField(
         obscureText: true,
-        cursorColor: AppColors.white,
-        decoration: InputDecoration(
-          filled: true,
-          fillColor:
-              AppColors.purple.withOpacity(0.6), // Set the background color
-          // Adjust content padding
-
-          border: OutlineInputBorder(
-            borderSide: BorderSide.none,
-            borderRadius: BorderRadius.circular(20.0), // Set the border radius
-          ),
-          prefixIcon: const Icon(
-            Icons.lock_outlined,
-          ), // Set the prefix icon
-          hintText: 'Enter your password', // Placeholder text
-          label: Coustom.text(
-            text: "PASSWORD",
-            fontSize: 14,
-            fontWeight: FontWeight.w400,
-          ),
-
-          floatingLabelAlignment: FloatingLabelAlignment.start,
-          alignLabelWithHint: true,
+        hintText: 'Enter your password', // Placeholder text
+        label: Coustom.text(
+          text: "PASSWORD",
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
         ),
+        cursorColor: AppColors.white,
+        prefixIcon: const Icon(
+          Icons.lock_outlined,
+        ), // Set the prefix icon
       ),
     );
   }
@@ -211,10 +174,11 @@ class _LoginState extends State<Login> {
           ),
           children: [
             WidgetSpan(
-                child: Coustom.text(
-              text: "Sign up",
-              colors: AppColors.green,
-            ))
+              child: Coustom.text(
+                text: "Sign up",
+                colors: AppColors.green,
+              ),
+            ),
           ],
         ),
       ),
