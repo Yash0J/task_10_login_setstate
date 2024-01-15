@@ -47,6 +47,7 @@ class Coustom {
   ///[ coustom TextFormField Widgit]
   static TextFormField textField({
     Widget? label,
+    FloatingLabelBehavior? floatingLabelBehavior,
     String? hintText,
     TextStyle? hintStyle,
     bool? filled = true,
@@ -62,6 +63,9 @@ class Coustom {
     bool? alignLabelWithHint = true,
     bool? obscureText = false,
     InputDecoration? decoration,
+    TextEditingController? controller,
+    String? Function(String?)? validator,
+    Widget? error,
   }) {
     ////////////////////////////////////////////
     ////default border style
@@ -86,14 +90,19 @@ class Coustom {
       hintText: hintText,
       prefixIcon: prefixIcon,
       hintStyle: hintStyle,
+      floatingLabelBehavior:
+          floatingLabelBehavior ?? FloatingLabelBehavior.never,
       label: label,
       floatingLabelAlignment: floatingLabelAlignment,
       alignLabelWithHint: alignLabelWithHint,
+      error: error,
     );
     ////////////////////////////////////////////
 
     return TextFormField(
       cursorColor: cursorColor,
+      controller: controller,
+      validator: validator,
       decoration: decoration,
     );
   }
